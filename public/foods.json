@@ -1,0 +1,137 @@
+[
+  {
+    "food_image": "https://i.ibb.co/HGjLkGX/pasta-plate-chopping-board-with-fork.jpg",
+    "food_name": "Spaghetti Carbonara",
+    "donator": {
+      "donator_image": "https://fakeprofileimage1.com",
+      "donator_name": "Alice Smith",
+      "donator_email": "alice.smith@example.com"
+    },
+    "food_quantity": "Serves 4 people",
+    "pickup_location": "123 Main Street, Cityville",
+    "request_date": "2024-05-11T10:00:00",
+    "expired_date": "2024-05-12T18:00:00",
+    "additional_notes": "Creamy pasta with bacon and parmesan cheese.",
+    "food_description": "Classic Italian pasta dish made with spaghetti, eggs, pancetta, and grated parmesan cheese, creating a rich and creamy sauce."
+  },
+  {
+    "food_image": "https://i.ibb.co/g63Rxb5/vegetable-ratatouille-frying-pan-wooden-table.jpg",
+    "food_name": "Vegetable Stir-Fry",
+    "donator": {
+      "donator_image": "https://fakeprofileimage2.com",
+      "donator_name": "John Doe",
+      "donator_email": "john.doe@example.com"
+    },
+    "food_quantity": "Serves 6 people",
+    "pickup_location": "456 Elm Avenue, Townsville",
+    "request_date": "2024-05-11T11:00:00",
+    "expired_date": "2024-05-13T19:00:00",
+    "additional_notes": "Fresh vegetables cooked in a savory sauce.",
+    "food_description": "Colorful assortment of crisp vegetables, including bell peppers, broccoli, carrots, and snap peas, stir-fried to perfection and tossed in a flavorful sauce."
+  },
+  {
+    "food_image": "https://i.ibb.co/yYVdRFf/pasta-meal-pan-with-raw-pasta-mushroom-parsley-tomato.jpg",
+    "food_name": "Chicken Alfredo Pasta",
+    "donator": {
+      "donator_image": "https://fakeprofileimage3.com",
+      "donator_name": "Emma Johnson",
+      "donator_email": "emma.johnson@example.com"
+    },
+    "food_quantity": "Serves 3 people",
+    "pickup_location": "789 Oak Street, Villageland",
+    "request_date": "2024-05-11T12:00:00",
+    "expired_date": "2024-05-14T20:00:00",
+    "additional_notes": "Rich and creamy pasta with grilled chicken.",
+    "food_description": "Indulgent pasta dish featuring tender grilled chicken breast slices tossed in a velvety Alfredo sauce, served over fettuccine pasta."
+  },
+  {
+    "food_image": "https://i.ibb.co/XZVYD5L/front-view-different-vegetables-with-greens-grey-background-salad-meal-health-ripe-spicy.jpg",
+    "food_name": "Vegetarian Chili",
+    "donator": {
+      "donator_image": "https://fakeprofileimage4.com",
+      "donator_name": "Michael Brown",
+      "donator_email": "michael.brown@example.com"
+    },
+    "food_quantity": "Serves 8 people",
+    "pickup_location": "101 Maple Lane, Hamletville",
+    "request_date": "2024-05-11T13:00:00",
+    "expired_date": "2024-05-15T21:00:00",
+    "additional_notes": "Hearty chili loaded with beans and vegetables.",
+    "food_description": "Robust chili made with a medley of kidney beans, black beans, corn, tomatoes, and assorted vegetables, seasoned with a blend of spices for a satisfying meal."
+  },
+  {
+    "food_image": "https://i.ibb.co/QYgpBcY/caprese-salad-healthy-meal-with-cherry-tomatoes-mozzarella-balls-basil-home-made-tasty-food-concept.jpg",
+    "food_name": "BBQ Pulled Pork Sandwiches",
+    "donator": {
+      "donator_image": "https://fakeprofileimage5.com",
+      "donator_name": "Sarah Wilson",
+      "donator_email": "sarah.wilson@example.com"
+    },
+    "food_quantity": "Serves 10 people",
+    "pickup_location": "222 Oakwood Drive, Riverside",
+    "request_date": "2024-05-11T14:00:00",
+    "expired_date": "2024-05-16T22:00:00",
+    "additional_notes": "Slow-cooked pulled pork smothered in tangy BBQ sauce.",
+    "food_description": "Tender pulled pork slow-cooked to perfection, shredded, and piled high on soft sandwich buns, generously coated with sweet and smoky BBQ sauce."
+  },
+  {
+    "food_image": "https://i.ibb.co/bBZXtZ5/delicious-arepas-with-meat-tomatoes.jpg",
+    "food_name": "Caprese Salad",
+    "donator": {
+      "donator_image": "https://fakeprofileimage6.com",
+      "donator_name": "David Thompson",
+      "donator_email": "david.thompson@example.com"
+    },
+    "food_quantity": "Serves 4 people",
+    "pickup_location": "333 Pine Street, Lakeside",
+    "request_date": "2024-05-11T15:00:00",
+    "expired_date": "2024-05-17T23:00:00",
+    "additional_notes": "Fresh salad with tomatoes, mozzarella, and basil.",
+    "food_description": "Simple yet elegant salad featuring ripe tomatoes, creamy mozzarella cheese, and fragrant basil leaves, drizzled with balsamic glaze and olive oil."
+  },
+  {
+    "food_image": "https://i.ibb.co/N9wWDhF/fusilli-pasta-with-mushrooms-chicken-top-view.jpg",
+    "food_name": "Mushroom Risotto",
+    "donator": {
+      "donator_image": "https://fakeprofileimage7.com",
+      "donator_name": "Jessica Anderson",
+      "donator_email": "jessica.anderson@example.com"
+    },
+    "food_quantity": "Serves 5 people",
+    "pickup_location": "444 Cedar Avenue, Hillside",
+    "request_date": "2024-05-11T16:00:00",
+    "expired_date": "2024-05-18T00:00:00",
+    "additional_notes": "Creamy risotto with sautéed mushrooms.",
+    "food_description": "Decadent risotto cooked to perfection, infused with earthy mushrooms, onions, garlic, and finished with a touch of butter and parmesan cheese."
+  },
+  {
+    "food_image": "https://i.ibb.co/mNzp4MW/green-curry-bowl-spices-wooden-table.jpg",
+    "food_name": "Thai Green Curry",
+    "donator": {
+      "donator_image": "https://fakeprofileimage8.com",
+      "donator_name": "Ryan Miller",
+      "donator_email": "ryan.miller@example.com"
+    },
+    "food_quantity": "Serves 6 people",
+    "pickup_location": "555 Willow Street, Meadowview",
+    "request_date": "2024-05-11T17:00:00",
+    "expired_date": "2024-05-19T01:00:00",
+    "additional_notes": "Zesty curry with chicken, vegetables, and coconut milk.",
+    "food_description": "Authentic Thai curry bursting with flavors of lemongrass, green chilies, and fresh herbs, cooked with tender chicken, vegetables, and creamy coconut milk."
+  },
+  {
+    "food_image": "https://i.ibb.co/DVy9r6C/vegan-tacos-with-guacamole-chickpeas-tomatoes-arugula-healthy-food-useful-breakfast.jpg",
+    "food_name": "Greek Salad",
+    "donator": {
+      "donator_image": "https://fakeprofileimage9.com",
+      "donator_name": "Olivia Taylor",
+      "donator_email": "olivia.taylor@example.com"
+    },
+    "food_quantity": "Serves 4 people",
+    "pickup_location": "666 Elmwood Avenue, Woodland",
+    "request_date": "2024-05-11T18:00:00",
+    "expired_date": "2024-05-20T02:00:00",
+    "additional_notes": "Crisp salad with tomatoes, cucumbers, olives, and feta cheese.",
+    "food_description": "Refreshing salad featuring ripe tomatoes, crisp cucumbers, briny olives, and tangy feta cheese, drizzled with olive oil and sprinkled with oregano."
+  }
+]
