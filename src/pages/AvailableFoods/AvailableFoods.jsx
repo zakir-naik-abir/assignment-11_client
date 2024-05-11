@@ -5,4 +5,4 @@ const AvailableFoods = () => {
   )
 }
 
-export default AvailableFoods
+export default AvailableFoods;

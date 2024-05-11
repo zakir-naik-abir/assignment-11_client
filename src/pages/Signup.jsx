@@ -78,7 +78,7 @@ const Signup = () => {
             <img src="../../src/assets/login.svg" alt="" />
             {/* <img src={imgLoin} /> */}
           </div>
-          <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+          <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100 py-3">
             <h1 className="text-5xl font-bold text-center">Sign Up</h1>
             <form onSubmit={handleSignup} className="card-body">
               <div className="form-control">

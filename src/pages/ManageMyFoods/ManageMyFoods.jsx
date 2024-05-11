@@ -5,4 +5,4 @@ const ManageMyFoods = () => {
   )
 }
 
-export default ManageMyFoods
+export default ManageMyFoods;

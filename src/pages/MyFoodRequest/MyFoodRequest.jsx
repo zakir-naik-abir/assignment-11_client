@@ -5,4 +5,4 @@ const MyFoodRequest = () => {
   )
 }
 
-export default MyFoodRequest
+export default MyFoodRequest;
