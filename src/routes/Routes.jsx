@@ -10,8 +10,8 @@ import AddFood from "../pages/AddFood/AddFood";
 import ManageMyFoods from "../pages/ManageMyFoods/ManageMyFoods";
 import MyFoodRequest from "../pages/MyFoodRequest/MyFoodRequest";
 import About from "../pages/About/About";
-import Contact from "../pages/Contact/Contact";
 import UpdateProfile from "../pages/Update/UpdateProfile";
+import FoodDetails from "../pages/Home/Foods/FoodDetails";
 
 
 export const router = createBrowserRouter([
@@ -21,13 +21,21 @@ export const router = createBrowserRouter([
     errorElement: <ErrorElement></ErrorElement>,
     children:[
       {
-        path: '/',
+        // path: '/',
+        index: true,
         element: <Home></Home>,
+        // loader: () =>fetch(`${import.meta.env.VITE_API_URL}/foods`),
       },
       {
         path: '/availableFoods',
         element: <AvailableFoods></AvailableFoods>,
+        loader: ()=> fetch(`http://localhost:5000/foods`),
       },
+      // {
+      //   path: '/foodDetails',
+      //   element: <PrivateRoutes><FoodDetails></FoodDetails></PrivateRoutes>,
+      //   loader: ({params})=> fetch(`http://localhost:5000/food/${params.id}`),
+      // },
       {
         path: '/addFood',
         element: <PrivateRoutes><AddFood></AddFood></PrivateRoutes>,
@@ -45,10 +53,6 @@ export const router = createBrowserRouter([
         element: <About></About>,
       },
       {
-        path: '/contact',
-        element: <Contact></Contact>,
-      },
-      {
         path: '/login',
         element: <Login></Login>,
       },
@@ -58,9 +62,15 @@ export const router = createBrowserRouter([
       },
       {
         path: '/updateProfile',
-        element: <UpdateProfile></UpdateProfile>,
+        element: <PrivateRoutes><UpdateProfile></UpdateProfile></PrivateRoutes>,
       },
-      
+
+      {
+        path: '/food/:id',
+        element: <FoodDetails></FoodDetails>,
+        loader: ({params})=> fetch(`http://localhost:5000/food/${params.id}`),
+      },
+
     ]
   },
 ]);

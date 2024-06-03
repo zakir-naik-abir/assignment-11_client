@@ -1,10 +1,11 @@
 import { Link, useLocation, useNavigate } from "react-router-dom"
-// import registerImg from "../../../src/assets/images/login/login.svg"
+import registerImg from "../../src/assets/login.svg"
 import { useContext, useState } from "react"
 import { IoEye } from "react-icons/io5";
 import { IoMdEyeOff } from "react-icons/io";
 import axios from 'axios'
 import { AuthContext } from "../Providers/AuthProvider";
+import toast from "react-hot-toast";
 
 const Login = () => {
   const { success, setSuccess, error, setError, loginUser, googleLogin, githubLogin, forgetPassword } = useContext(AuthContext);
@@ -13,7 +14,7 @@ const Login = () => {
   console.log(location)
   const navigate = useNavigate();
 
-  const handleLogin = event =>{
+  const handleLogin = async event =>{
     event.preventDefault();
     const form = new FormData(event.currentTarget); 
     const email = form.get('email')
@@ -23,57 +24,73 @@ const Login = () => {
     setError('');
     setSuccess('');
 
-    loginUser(email, password)
-    .then(result =>{
-      const loggedInUser = result.user;
-      console.log(loggedInUser);
-      const user = {email};
-      setSuccess('Login Successful');
-      // navigate(location?.state ? location?.state : '/')
-      // get access token
-      axios.post(`https://car-doctor-server-seven-gold.vercel.app/jwt=${email}`, user, {withCredentials: true})
-      .then(res => {
-        console.log(res.data);
-        if(res.data.success){
-          navigate(location?.state ? location?.state : '/')
-        }
-      })
-    })
-    .catch(error =>{
-      console.error(error);
-      setError('Email or Password incorrect');
-    })
+    try{
+      const result = await loginUser(email, password)
+      console.log(result)
+      toast.success('Login Successful')
+      navigate('/')
+      // const user = {email}
+      // axios.post(`http://localhost:5000/jwt=${email}`, user, {withCredentials: true})
+      // .then(res => {
+      //   console.log(res.data);
+      //   if(res.data.success){
+      //     navigate(location?.state ? location?.state : '/')
+      //   }
+      // })
+    }catch(err){
+      console.log(err)
+      toast.error('Login fail')
+    }
+
+    // loginUser(email, password)
+    // .then(result =>{
+    //   const loggedInUser = result.user;
+    //   console.log(loggedInUser);
+    //   const user = {email};
+    //   setSuccess('Login Successful');
+    //   // navigate(location?.state ? location?.state : '/')
+    //   // get access token
+    //   axios.post(`http://localhost:5000/jwt=${email}`, user, {withCredentials: true})
+    //   .then(res => {
+    //     console.log(res.data);
+    //     if(res.data.success){
+    //       navigate(location?.state ? location?.state : '/')
+    //     }
+    //   })
+    // })
+    // .catch(error =>{
+    //   console.error(error);
+    //   setError('Email or Password incorrect');
+    // })
   }
 
-  const handleGoogleLogin = () =>{
-    googleLogin()
-    .then(result =>{
-      console.log(result)
-      navigate(location?.state ? location?.state : '/')
-    })
-    .catch(error =>{
-      console.error(error)
-    })
+  const handleGoogleLogin = async() =>{
+    try{
+      await googleLogin()
+      toast.success('Login Successful')
+      navigate('/')
+    }catch(err){
+      console.log(err)
+      toast.error('Login Fail')
+    }
   }
-  const handleGithubLogin = () =>{
-    githubLogin()
-    .then(result =>{
-      console.log(result)
-    })
-    .catch(error =>{
-      console.error(error)
-    })
+  const handleGithubLogin = async() =>{
+    try{
+      await githubLogin()
+      toast.success('Login Successful')
+      navigate('/')
+    }catch(err){
+      console.log(err)
+      toast.error('Login Fail') 
+    }
   }
-  const handleForget = () =>{
-    forgetPassword()
-    .then(result =>{
-      console.log(result);
-      alert('Password resend successful. Check your email')
+  const handleForget = async() =>{
+    try{
+      await forgetPassword()
       navigate(location?.state ? location?.state : '/')
-    })
-    .catch(error =>{
+    }catch(error){
       console.error(error);
-    })
+    }
   }
   
   return (
@@ -81,8 +98,8 @@ const Login = () => {
       <div className="hero min-h-screen bg-base-200">
         <div className="hero-content flex-col md:flex-row lg:flex-row">
           <div className="text-center lg:text-right">
-            {/* <img src={registerImg} /> */}
-            <img src="../../src/assets/login.svg" alt="" />
+            <img src={registerImg} />
+            {/* <img src="../../src/assets/login.svg" alt="" /> */}
           </div>
           <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100 py-4">
             <h1 className="text-5xl font-bold text-center">Login</h1>

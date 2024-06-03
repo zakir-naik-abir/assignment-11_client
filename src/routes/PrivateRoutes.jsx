@@ -1,8 +1,10 @@
 import { useContext } from "react"
 import { AuthContext } from "../Providers/AuthProvider"
+import { Navigate, useLocation } from "react-router-dom";
 
 const PrivateRoutes = ({children}) => {
   const {user, loading} = useContext(AuthContext);
+  const location = useLocation()
 
   if(loading){
     return <div className="flex flex-col m-8 rounded shadow-md w-60 sm:w-80 animate-pulse h-96">
@@ -14,10 +16,9 @@ const PrivateRoutes = ({children}) => {
     </div>
   </div>
   }
-
   if(user?.email){
     return children;
   }
-  
+  return <Navigate state={location.pathname} to="/login" replace></Navigate>
 }
 export default PrivateRoutes;
