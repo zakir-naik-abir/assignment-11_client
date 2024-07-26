@@ -35,7 +35,7 @@ const UpdateProfile = () => {
             <img src="../../../src/assets/login.svg" alt="" />
           </div>
           <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100 py-8">
-            <h1 className="text-5xl font-bold text-center">Update Profile</h1>
+            <u className="text-4xl font-bold text-center">Update Profile</u>
             <form onSubmit={profileUpdate} className="card-body">
               <div className="form-control">
                 <label className="label">
