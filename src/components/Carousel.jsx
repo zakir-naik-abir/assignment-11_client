@@ -23,7 +23,7 @@ import Slide from './Slide'
 
 export default function Carousel() {
   return (
-    <>
+    <div >
       <Swiper
         spaceBetween={30}
         centeredSlides={true}
@@ -47,6 +47,6 @@ export default function Carousel() {
         <SwiperSlide><Slide image={img6}></Slide></SwiperSlide>
         
       </Swiper>
-    </>
+    </div>
   );
 }

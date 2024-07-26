@@ -8,10 +8,13 @@ import AvailableFoods from "../pages/AvailableFoods/AvailableFoods";
 import PrivateRoutes from "./PrivateRoutes";
 import AddFood from "../pages/AddFood/AddFood";
 import ManageMyFoods from "../pages/ManageMyFoods/ManageMyFoods";
-import MyFoodRequest from "../pages/MyFoodRequest/MyFoodRequest";
+// import MyFoodRequest from "../pages/MyFoodRequest/MyFoodRequest";
 import About from "../pages/About/About";
 import UpdateProfile from "../pages/Update/UpdateProfile";
 import FoodDetails from "../pages/Home/Foods/FoodDetails";
+import UpdateFood from "../pages/Update/UpdateFood";
+import OrderRequest from "../pages/Home/OrderRequest/OrderRequest";
+import MyFoodRequest from "../pages/MyFoodRequest/MyFoodRequest";
 
 
 export const router = createBrowserRouter([
@@ -47,6 +50,17 @@ export const router = createBrowserRouter([
       {
         path: '/myFoodRequest',
         element: <PrivateRoutes><MyFoodRequest></MyFoodRequest></PrivateRoutes>,
+        // loader: ({params})=> fetch(`${import.meta.env.VITE_API_URL}/order/${params.id}`),
+      },
+      {
+        path: '/ordersRequest',
+        element: <PrivateRoutes><OrderRequest></OrderRequest></PrivateRoutes>,
+        // loader: ({params})=> fetch(`${import.meta.env.VITE_API_URL}/order/${params.id}`),
+      },
+      {
+        path: '/updateFood/:id',
+        element: <PrivateRoutes><UpdateFood></UpdateFood></PrivateRoutes>,
+        loader: ({params})=> fetch(`${import.meta.env.VITE_API_URL}/food/${params.id}`),
       },   
       {
         path: '/about',
@@ -67,8 +81,9 @@ export const router = createBrowserRouter([
 
       {
         path: '/food/:id',
-        element: <FoodDetails></FoodDetails>,
-        loader: ({params})=> fetch(`http://localhost:5000/food/${params.id}`),
+        element: <PrivateRoutes><FoodDetails></FoodDetails></PrivateRoutes>,
+        loader: ({params})=> fetch(`${import.meta.env.VITE_API_URL}/food/${params.id}`),
+        // loader: ({params})=> fetch(`http://localhost:5000/food/${params.id}`),
       },
 
     ]

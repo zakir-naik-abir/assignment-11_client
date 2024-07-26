@@ -7,6 +7,8 @@ import { createUserWithEmailAndPassword } from "firebase/auth";
 import { AuthContext } from "../Providers/AuthProvider";
 import { auth } from "../firebase/firebase.config";
 import toast from "react-hot-toast";
+import { Helmet } from "react-helmet-async";
+import axios from "axios";
 
 const Signup = () => {
 
@@ -42,56 +44,37 @@ const Signup = () => {
 
     try {
       const result = await createUserWithEmailAndPassword(auth, email, password)
-      console.log(result)
-      toast.success('Registration Successful')
-      navigate('/')
+      const {data} = await axios.post(`${import.meta.env.VITE_API_URL}/jwt`, { email: result?.user?.email }, {withCredentials: true})
+      console.log(data)
+      
       // await sendEmailVerification(auth.currentUser)
       // alert('Please check your email and verify')
       await updateUserProfile(name, photo, email)
       setUser({ ...user, photoURL: photo, displayName: name , email: email})
+
+      
+
+      toast.success('Registration Successful')
+      navigate(location?.state ? location?.state : '/')
     }catch (err){
       console.log(err)
       toast.error('Registration Fail')
     }
-
-
-    // createUserWithEmailAndPassword(auth, email, password)
-    // .then(result =>{
-    //   console.log(result);
-    //   setSignupSuccess("Registration Successful")
-      
-
-    //   updateProfile(result.user, {
-    //     displayName: name,
-    //     photoURL: photo,
-    //   })
-    //   .then( () =>{
-    //     console.log('Profile updated')
-    //   })
-    //   .catch()
-  
-    //   sendEmailVerification(auth.currentUser)
-    //   .then( () =>{
-    //     alert('Please check your email and verify your account')
-    //   })
-    // })
-    // .catch(error =>{
-    //   console.error(error);
-    //   setSignupError("Already Used Email")
-    // })
-    
-  }
+  };
 
   return (
     <div>
+       <Helmet>
+        <title>Sign Up | Food Donate</title>
+      </Helmet>
       <div className="hero min-h-screen bg-base-200 mb-5">
         <div className="hero-content flex-col md:flex-row lg:flex-row">
           <div className="text-center lg:text-right">
             <img src={imgLoin} />
           </div>
-          <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100 py-3">
-            <h1 className="text-5xl font-bold text-center">Sign Up</h1>
-            <form onSubmit={handleSignup} className="card-body">
+          <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100 p-4">
+            <i className="text-3xl font-bold text-center border-b-2 border-black pb-2" >Sign Up</i>
+            <form onSubmit={handleSignup} className="">
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Name</span>
@@ -123,9 +106,16 @@ const Signup = () => {
                   </span>
                 </div>
               </div>
-              <div className="text-gray-800">
-                <input className="border-2" type="checkbox" name="terms" required />
-                <label className="ml-2" htmlFor="terms">Accept our <a>Terms and Conditions</a></label>
+              <div className="text-gray-800 my-2">
+                <input
+                  className="border-2"
+                  type="checkbox"
+                  name="terms"
+                  id="terms"
+                />
+                <label className="ml-2 " htmlFor="terms">
+                  Accept our <a>Terms and Conditions</a>
+                </label>
               </div>
               <div>
                 {
@@ -137,7 +127,7 @@ const Signup = () => {
                 <input className="btn btn-primary" type="submit" value="Sign Up" />
               </div>
             </form>
-            <p className="text-center mb-5">Already have an account?<Link to={'/login'} className={'text-[#FF3811] font-bold'}>Login</Link></p>
+            <h3 className="text-center mb-5">Already have an account?<Link to={'/login'} className={'text-[#FF3811] font-bold'}><i>Login</i></Link></h3>
 
           </div>
         </div>

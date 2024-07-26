@@ -41,27 +41,15 @@ const AuthProvider = ({children}) => {
 
   useEffect( () =>{
     const unSubscribe = onAuthStateChanged(auth, currentUser =>{
-      const userEmail = currentUser?.email || user?.email;
-      const loggedUser = {email: userEmail};
+      // const userEmail = currentUser?.email || user?.email;
+      // const loggedUser = {email: userEmail};
       setUser(currentUser);
       console.log('User in the on state changed:', currentUser);
       setUser(currentUser);
       setLoading(false);
-      // if(currentUser){
-      //   axios.post(`http://localhost:5000/jwt`, loggedUser, {withCredentials: true})
-      //   .then(res =>{
-      //     console.log('token response', res.data);
-      //   })
-      // }
-      // else{
-      //   axios.post(`http://localhost:5000/logout`, loggedUser, {withCredentials: true})
-      //   .then(res =>{
-      //     console.log(res.data);
-      //   })
-      // }
     })
     return unSubscribe;
-  },[])
+  },[user])
   
   // update user profile
   const updateUserProfile = (name, image) =>{
@@ -72,7 +60,10 @@ const AuthProvider = ({children}) => {
   }
 
   // logout
-  const logout = () =>{
+  const logout = async() =>{
+    setLoading(true);
+    const {data} = await axios(`${import.meta.env.VITE_API_URL}/logout`, {withCredentials: true})
+    console.log(data)
     return signOut(auth);
   }
 

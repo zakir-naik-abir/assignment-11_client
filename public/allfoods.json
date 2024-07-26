@@ -3,11 +3,9 @@
     "food_image": "https://i.ibb.co/HGjLkGX/pasta-plate-chopping-board-with-fork.jpg",
     "food_name": "Spaghetti Carbonara",
 
-    "donator": {
-      "donator_image": "https://i.ibb.co/M62nTyH/Whats-App-Image-2024-05-16-at-9-17-34-AM.jpg",
-      "donator_name": "Alice Smith",
-      "donator_email": "alice.smith@example.com"
-    },
+    "donator_image": "https://i.ibb.co/M62nTyH/Whats-App-Image-2024-05-16-at-9-17-34-AM.jpg",
+    "donator_name": "Alice Smith",
+    "donator_email": "alice.smith@example.com",
 
     "food_quantity": "Serves 4 people",
     "pickup_location": "123 Main Street, Cityville",
